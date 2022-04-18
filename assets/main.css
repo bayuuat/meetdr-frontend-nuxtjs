@@ -1,0 +1,36 @@
+html {
+  font-size: 0.521vw;
+}
+
+.sidebar {
+  width: 5vw;
+  padding: 4rem;
+  height: 100vh;
+  background-color: #e6ecff;
+}
+
+.sidebar .brand-logo img {
+  width: 6rem;
+}
+
+.sidebar .nav .active {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.8rem;
+  border-radius: 1rem;
+  fill: #1e5c82;
+}
+
+.sidebar .nav img {
+  fill: #88a2b2;
+  margin: 2rem 0;
+}
+
+.sidebar .nav img:hover {
+  fill: #1e5c82;
+  cursor: pointer;
+}
+
+.sidebar .setting img {
+  padding: 0.8rem 0;
+}
+/*# sourceMappingURL=main.css.map */
