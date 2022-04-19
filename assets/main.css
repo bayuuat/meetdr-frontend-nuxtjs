@@ -2,27 +2,36 @@ html {
   font-size: 0.521vw;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 .sidebar {
+  border-top-right-radius: 1.7rem;
+  border-bottom-right-radius: 1.7rem;
   width: 5vw;
-  padding: 4rem;
+  padding: 3.6rem;
   height: 100vh;
   background-color: #e6ecff;
 }
 
 .sidebar .brand-logo img {
-  width: 6rem;
+  width: 5.5rem;
 }
 
-.sidebar .nav .active {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 0.8rem;
-  border-radius: 1rem;
-  fill: #1e5c82;
+.sidebar .nav a {
+  margin: 2rem 0;
+}
+
+.sidebar .nav a:hover img {
+  -webkit-filter: opacity(80%);
+          filter: opacity(80%);
 }
 
 .sidebar .nav img {
-  fill: #88a2b2;
-  margin: 2rem 0;
+  width: 3rem;
+  -webkit-filter: opacity(40%);
+          filter: opacity(40%);
 }
 
 .sidebar .nav img:hover {
@@ -30,7 +39,79 @@ html {
   cursor: pointer;
 }
 
+.sidebar .nav a.nuxt-link-exact-active img {
+  -webkit-filter: opacity(100%);
+          filter: opacity(100%);
+}
+
 .sidebar .setting img {
   padding: 0.8rem 0;
+}
+
+.profile .profile-card {
+  border-radius: 2rem;
+  background: #fff;
+}
+
+.profile .profile-card .main {
+  padding: 2.5rem;
+  border-radius: 2rem;
+  background-color: #5e85ff;
+  color: #fff;
+}
+
+.profile .profile-card .main .top {
+  margin-bottom: 2.8rem;
+}
+
+.profile .profile-card .main .top img {
+  padding: 1rem;
+  height: 6rem;
+  width: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background: #fff;
+  border-radius: 1.4rem;
+}
+
+.profile .profile-card .main .top .name h3 {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.profile .profile-card .main .top .name h5 {
+  font-weight: 300;
+  color: #ededed;
+}
+
+.profile .profile-card .main .bott h4 {
+  font-size: 1.4rem;
+}
+
+.profile .profile-card .main .bott h5 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #ededed;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profile .profile-card .side {
+  padding: 2.5rem;
+}
+
+.profile .profile-card .side h4 {
+  font-size: 1.4rem;
+  color: #555e6d;
+}
+
+.profile .profile-card .side h5 {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #959ba2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /*# sourceMappingURL=main.css.map */

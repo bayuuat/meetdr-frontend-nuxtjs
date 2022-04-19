@@ -2,10 +2,10 @@
   <div id="app">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-auto ps-0">
+        <div class="col-auto px-0">
           <Sidebar />
         </div>
-        <div class="col">
+        <div class="col p-5" style="background: #f6f8fc">
           <Nuxt />
         </div>
       </div>

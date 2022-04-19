@@ -7,13 +7,13 @@
     </div>
     <div class="nav d-flex flex-column">
       <nuxt-link class="d-flex justify-content-center" to="/">
-        <img class="active" src="~/assets/icon_hospital.svg" alt="" />
+        <img src="~/assets/icon_hospital.png" alt="" />
       </nuxt-link>
       <nuxt-link class="d-flex justify-content-center" to="/book">
-        <img src="~/assets/icon_bookmark.svg" alt="" />
+        <img src="~/assets/icon_bookmark.png" alt="" />
       </nuxt-link>
       <nuxt-link class="d-flex justify-content-center" to="/profile">
-        <img src="~/assets/icon_profile.svg" alt="" />
+        <img src="~/assets/icon_profile.png" alt="" />
       </nuxt-link>
     </div>
     <div class="setting d-flex flex-column">
@@ -25,12 +25,15 @@
 
 <script>
 export default {
-  mounted() {
-    console.log($(".nav nuxt-link"));
-    $(".nav a img").on("click", function () {
-      $(".nav").find(".active").removeClass("active");
-      $(this).addClass("active");
-    });
-  },
+  mounted() {},
 };
 </script>
+
+<style>
+/* exact link will show the primary color for only the exact matching link */
+a.nuxt-link-exact-active {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+</style>

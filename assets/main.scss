@@ -2,35 +2,108 @@ html {
   font-size: 0.521vw;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+}
+
 .sidebar {
+  border-top-right-radius: 1.7rem;
+  border-bottom-right-radius: 1.7rem;
   width: 5vw;
-  padding: 4rem;
+  padding: 3.6rem;
   height: 100vh;
   background-color: #e6ecff;
   .brand-logo {
     img {
-      width: 6rem;
+      width: 5.5rem;
     }
   }
   .nav {
-    .active {
-      background-color: rgba(255, 255, 255, 0.5);
-      padding: 0.8rem;
-      border-radius: 1rem;
-      fill: #1e5c82;
+    a {
+      margin: 2rem 0;
+      &:hover {
+        img {
+          filter: opacity(80%);
+        }
+      }
     }
     img {
-      fill: #88a2b2;
-      margin: 2rem 0;
+      width: 3rem;
+      filter: opacity(40%);
       &:hover {
         fill: #1e5c82;
         cursor: pointer;
       }
     }
+    a.nuxt-link-exact-active img {
+      filter: opacity(100%);
+    }
   }
   .setting {
     img {
       padding: 0.8rem 0;
+    }
+  }
+}
+
+.profile {
+  .profile-card {
+    border-radius: 2rem;
+    background: #fff;
+    .main {
+      padding: 2.5rem;
+      border-radius: 2rem;
+      background-color: #5e85ff;
+      color: #fff;
+      .top {
+        margin-bottom: 2.8rem;
+        img {
+          padding: 1rem;
+          height: 6rem;
+          width: 6rem;
+          object-fit: cover;
+          background: #fff;
+          border-radius: 1.4rem;
+        }
+        .name {
+          h3 {
+            font-size: 1.9rem;
+            font-weight: 500;
+          }
+          h5 {
+            font-weight: 300;
+            color: #ededed;
+          }
+        }
+      }
+      .bott {
+        h4 {
+          font-size: 1.4rem;
+        }
+        h5 {
+          font-size: 1.4rem;
+          font-weight: 300;
+          color: #ededed;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    .side {
+      padding: 2.5rem;
+      h4 {
+        font-size: 1.4rem;
+        color: #555e6d;
+      }
+      h5 {
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: #959ba2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 }
