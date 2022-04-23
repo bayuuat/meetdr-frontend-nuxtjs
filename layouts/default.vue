@@ -5,7 +5,7 @@
         <div class="col-auto px-0">
           <Sidebar />
         </div>
-        <div class="col p-5" style="background: #f6f8fc">
+        <div class="col p-5">
           <Nuxt />
         </div>
       </div>

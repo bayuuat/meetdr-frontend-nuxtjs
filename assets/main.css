@@ -4,6 +4,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
+  background: #f6f8fc;
 }
 
 .sidebar {
@@ -46,6 +47,12 @@ body {
 
 .sidebar .setting img {
   padding: 0.8rem 0;
+}
+
+.profile .custom-card {
+  border-radius: 2rem;
+  background: #fff;
+  padding: 2.5rem;
 }
 
 .profile .profile-card {
@@ -113,5 +120,88 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.profile .detail-card .icon-top {
+  font-size: 2.5rem;
+  color: #5e85ff;
+  background: #dce4ff;
+  border-radius: 50%;
+  padding: 1.5rem;
+}
+
+.profile .detail-card h4 {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+.profile .detail-card h3 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.profile .detail-card .bot {
+  font-size: 1.1rem;
+}
+
+.profile .detail-card .bot i {
+  margin-right: 0.5rem;
+  color: #f15658;
+}
+
+.profile .detail-card .bot .good {
+  color: #4ddfb7;
+}
+
+.profile .detail-card .bot span {
+  color: #8e9296;
+}
+
+.profile .diagnos-card .icon-top {
+  font-size: 2.5rem;
+  color: #5e85ff;
+  background: #dce4ff;
+  border-radius: 50%;
+  padding: 1.5rem;
+}
+
+.profile .diagnos-card h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.profile .diagnos-card h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.profile .diagnos-card h4 {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  color: #8e9296;
+}
+
+.profile .diagnos-card .bot {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  background: #f6f8ff;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+}
+
+.profile .diagnos-card .bot h5 {
+  margin: 0;
+  color: #606060;
+}
+
+.profile .diagnos-card .bot i {
+  color: #8e9296;
+}
+
+.profile .side-card {
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */

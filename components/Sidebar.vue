@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sidebar d-flex flex-column align-items-center justify-content-between"
+    class="sidebar d-flex flex-column align-items-center justify-content-between sticky-top"
   >
     <div class="brand-logo">
       <img src="~/assets/logo.svg" alt="" />
