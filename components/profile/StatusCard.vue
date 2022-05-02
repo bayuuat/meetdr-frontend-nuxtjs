@@ -36,8 +36,8 @@
     <div class="col-12 col-lg-3">
       <div class="custom-card detail-card shadow-sm">
         <i class="fas fa-chart-line icon-top"></i>
-        <h4>Blood Pressure</h4>
-        <h3>100 mg/dl</h3>
+        <h4>Body Temperature</h4>
+        <h3>39 &#176;C</h3>
         <div class="bot">
           <i class="fas fa-angle-double-up"></i>
           <span>Higher than average</span>

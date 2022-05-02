@@ -24,6 +24,16 @@
           <LastCard />
           <MedicineCard />
         </div>
+        <div class="col mt-4">
+          <div class="symptomp-card custom-card shadow-sm">
+            <h3>Patient Symptoms</h3>
+            <h4>
+              My throat is pain and i feel soreness in there. I feel fever and
+              fatigue all over my body.
+            </h4>
+            <h5>Since : 2 weeks ago</h5>
+          </div>
+        </div>
       </div>
     </div>
   </div>
