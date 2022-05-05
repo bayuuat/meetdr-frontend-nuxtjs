@@ -13,13 +13,6 @@
     font-weight: 400;
     color: #8e9296;
   }
-
-  .modal-content {
-    * {
-      font-size: 1.6rem;
-    }
-  }
-
   .hero {
     .text {
       margin-right: 8rem;
@@ -58,6 +51,75 @@
       border-color: #5e85ff;
       &:hover {
         background-color: #446ce6;
+      }
+    }
+    .modal-content {
+      border-radius: 0.8rem;
+      border: 0;
+      * {
+        font-size: 1.6rem;
+      }
+      button {
+        font-size: 1.8rem;
+        border-radius: 1rem;
+        padding: 0.5rem 3rem;
+      }
+      .btn-primary {
+        background-color: #5e85ff;
+        border-color: #5e85ff;
+        &:hover {
+          background-color: #446ce6;
+        }
+      }
+      h5 {
+        font-size: 1.9rem;
+      }
+    }
+  }
+  .order-card {
+    background: rgb(234, 234, 234);
+    border: 1px solid #c8c8c8;
+    i {
+      font-size: 1.5rem;
+    }
+    h1 {
+      font-size: 8rem;
+    }
+    h4 {
+      color: #000000;
+    }
+    button {
+      font-size: 1.8rem;
+      border-radius: 1rem;
+      padding: 0.5rem 3rem;
+    }
+    .btn-primary {
+      background-color: #5e85ff;
+      border-color: #5e85ff;
+      &:hover {
+        background-color: #446ce6;
+      }
+    }
+    .modal-content {
+      border-radius: 0.8rem;
+      border: 0;
+      * {
+        font-size: 1.6rem;
+      }
+      button {
+        font-size: 1.8rem;
+        border-radius: 1rem;
+        padding: 0.5rem 3rem;
+      }
+      .btn-primary {
+        background-color: #5e85ff;
+        border-color: #5e85ff;
+        &:hover {
+          background-color: #446ce6;
+        }
+      }
+      h5 {
+        font-size: 1.9rem;
       }
     }
   }

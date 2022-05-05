@@ -434,10 +434,6 @@
   color: #8e9296;
 }
 
-.home-page .modal-content * {
-  font-size: 1.6rem;
-}
-
 .home-page .hero .text {
   margin-right: 8rem;
 }
@@ -484,6 +480,94 @@
 
 .home-page .cta .btn-primary:hover {
   background-color: #446ce6;
+}
+
+.home-page .cta .modal-content {
+  border-radius: 0.8rem;
+  border: 0;
+}
+
+.home-page .cta .modal-content * {
+  font-size: 1.6rem;
+}
+
+.home-page .cta .modal-content button {
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  padding: 0.5rem 3rem;
+}
+
+.home-page .cta .modal-content .btn-primary {
+  background-color: #5e85ff;
+  border-color: #5e85ff;
+}
+
+.home-page .cta .modal-content .btn-primary:hover {
+  background-color: #446ce6;
+}
+
+.home-page .cta .modal-content h5 {
+  font-size: 1.9rem;
+}
+
+.home-page .order-card {
+  background: #eaeaea;
+  border: 1px solid #c8c8c8;
+}
+
+.home-page .order-card i {
+  font-size: 1.5rem;
+}
+
+.home-page .order-card h1 {
+  font-size: 8rem;
+}
+
+.home-page .order-card h4 {
+  color: #000000;
+}
+
+.home-page .order-card button {
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  padding: 0.5rem 3rem;
+}
+
+.home-page .order-card .btn-primary {
+  background-color: #5e85ff;
+  border-color: #5e85ff;
+}
+
+.home-page .order-card .btn-primary:hover {
+  background-color: #446ce6;
+}
+
+.home-page .order-card .modal-content {
+  border-radius: 0.8rem;
+  border: 0;
+}
+
+.home-page .order-card .modal-content * {
+  font-size: 1.6rem;
+}
+
+.home-page .order-card .modal-content button {
+  font-size: 1.8rem;
+  border-radius: 1rem;
+  padding: 0.5rem 3rem;
+}
+
+.home-page .order-card .modal-content .btn-primary {
+  background-color: #5e85ff;
+  border-color: #5e85ff;
+}
+
+.home-page .order-card .modal-content .btn-primary:hover {
+  background-color: #446ce6;
+}
+
+.home-page .order-card .modal-content h5 {
+  font-size: 1.9rem;
 }
 
 html {

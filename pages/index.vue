@@ -32,7 +32,10 @@
             <h4>Registration is open until 19:00</h4>
           </div>
         </div>
-        <div class="col-8 d-flex justify-content-center">
+        <div
+          class="col-8 d-flex justify-content-center"
+          v-if="!isAuthenticated"
+        >
           <div class="col-8 cta d-flex flex-column justify-content-between">
             <h1 class="text-center">
               Want to get in the queue and haven't registered yet?
@@ -43,7 +46,7 @@
                   type="button"
                   class="btn btn-outline-secondary"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#guestRegister"
                 >
                   Register as Guest
                 </button>
@@ -53,14 +56,36 @@
                   type="button"
                   class="btn btn-primary"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#userRegister"
                 >
                   Register as User
                 </button>
               </div>
 
               <RegisterModal />
+              <GuestRegisterModal />
             </div>
+          </div>
+        </div>
+        <div class="col-4" v-else>
+          <div
+            class="custom-card order-card shadow-sm h-100 d-flex flex-column justify-content-center"
+          >
+            <h2 class="text-center">Hallo, {{ loggedInUser.name }}</h2>
+            <!-- <h1 class="my-5 text-center">1</h1> -->
+            <h2 class="my-5 text-center">You are not on the queue</h2>
+            <!-- <h4 class="text-center">Order Number</h4> -->
+            <div class="d-flex justify-content-center">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#loginUserRegister"
+              >
+                Register
+              </button>
+            </div>
+            <LoggedinRegisterModal />
           </div>
         </div>
       </div>
@@ -69,8 +94,21 @@
 </template>
 
 <script>
-import RegisterModal from "@/components/home/RegisterModal.vue";
+import RegisterModal from "@/components/home/UserRegister.vue";
+import LoggedinRegisterModal from "@/components/home/LoginUserRegister.vue";
+import GuestRegisterModal from "@/components/home/GuestRegister.vue";
+
+import { mapGetters } from "vuex";
+
 export default {
-  components: { RegisterModal },
+  components: { RegisterModal, GuestRegisterModal, LoggedinRegisterModal },
+
+  data() {
+    return {};
+  },
+
+  computed: {
+    ...mapGetters(["isAuthenticated", "loggedInUser"]),
+  },
 };
 </script>
