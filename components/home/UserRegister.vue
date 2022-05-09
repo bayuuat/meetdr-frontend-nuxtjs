@@ -202,7 +202,7 @@ export default {
             password: this.password,
           },
         });
-        this.$router.push("/profile");
+        this.$router.go();
       } catch (e) {
         this.error = e.response.data.data.message;
       }

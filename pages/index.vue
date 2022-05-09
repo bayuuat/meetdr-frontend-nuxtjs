@@ -20,18 +20,11 @@
     </section>
     <div class="queue py-3">
       <div class="row">
-        <div class="col-4">
-          <div class="custom-card queue-card shadow-sm">
-            <div class="header d-flex justify-content-between">
-              <h2>Queue</h2>
-              <div class="align-self-center">
-                <i class="fas fa-ellipsis-v"></i>
-              </div>
-            </div>
-            <h1 class="my-5 text-center">1/20</h1>
-            <h4>Registration is open until 19:00</h4>
-          </div>
-        </div>
+        <QueueCard
+          :isAuthenticated="isAuthenticated"
+          :isOpen="isOpen"
+          :totalPasien="totalPasien"
+        />
         <div
           class="col-8 d-flex justify-content-center"
           v-if="!isAuthenticated"
@@ -72,18 +65,22 @@
             class="custom-card order-card shadow-sm h-100 d-flex flex-column justify-content-center"
           >
             <h2 class="text-center">Hallo, {{ loggedInUser.name }}</h2>
-            <!-- <h1 class="my-5 text-center">1</h1> -->
-            <h2 class="my-5 text-center">You are not on the queue</h2>
-            <!-- <h4 class="text-center">Order Number</h4> -->
-            <div class="d-flex justify-content-center">
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#loginUserRegister"
-              >
-                Register
-              </button>
+            <div class="" v-if="isOpen && !alreadyRegis">
+              <h2 class="my-5 text-center">You are not on the queue</h2>
+              <div class="d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginUserRegister"
+                >
+                  Register
+                </button>
+              </div>
+            </div>
+            <div class="" v-if="isOpen && alreadyRegis">
+              <h1 class="my-5 text-center">1</h1>
+              <h4 class="text-center">Order Number</h4>
             </div>
             <LoggedinRegisterModal />
           </div>
@@ -97,14 +94,58 @@
 import RegisterModal from "@/components/home/UserRegister.vue";
 import LoggedinRegisterModal from "@/components/home/LoginUserRegister.vue";
 import GuestRegisterModal from "@/components/home/GuestRegister.vue";
+import QueueCard from "@/components/home/QueueCard.vue";
 
 import { mapGetters } from "vuex";
 
 export default {
-  components: { RegisterModal, GuestRegisterModal, LoggedinRegisterModal },
+  components: {
+    RegisterModal,
+    GuestRegisterModal,
+    LoggedinRegisterModal,
+    QueueCard,
+  },
 
   data() {
-    return {};
+    return {
+      openHour: 17,
+      closedHour: 24,
+      isOpen: false,
+      alreadyRegis: false,
+      totalPasien: 0,
+      pendaftar: [],
+      timestamp: "",
+    };
+  },
+
+  methods: {
+    getNow: function () {
+      const today = new Date();
+      const time = today.getHours();
+      this.timestamp = time;
+    },
+  },
+
+  async fetch() {
+    await this.$axios
+      .get("pendaftar")
+      .then((res) => [
+        (this.totalPasien = res.data.data.total),
+        (this.pendaftar = res.data.data.data),
+      ]);
+  },
+
+  mounted() {
+    this.getNow();
+    if (this.timestamp > this.openHour && this.timestamp < this.closedHour) {
+      this.isOpen = true;
+    }
+    for (let index = 0; index < this.pendaftar.length; index++) {
+      const user_id = this.pendaftar[index].user_id;
+      if (this.loggedInUser.id == user_id) {
+        this.alreadyRegis = true;
+      }
+    }
   },
 
   computed: {

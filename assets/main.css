@@ -463,6 +463,10 @@
   color: #ededed;
 }
 
+.home-page .closed {
+  background: #ef3636;
+}
+
 .home-page .cta h1 {
   font-size: 5rem;
 }

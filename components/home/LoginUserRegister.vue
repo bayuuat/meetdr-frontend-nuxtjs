@@ -19,22 +19,20 @@
             aria-label="Close"
           ></button>
         </div>
-        <form method="post" @submit.prevent="register">
+        <form method="post" @submit.prevent="queue">
           <div class="modal-body">
             <Notification :message="error" v-if="error" />
             <div class="mb-3">
               <label for="inputEmail" class="col-form-label"
                 >How you feel?</label
               >
-              <div class="">
-                <textarea
-                  class="form-control"
-                  id="inputComplaint"
-                  rows="4"
-                  name="complaint"
-                  v-model="complaint"
-                ></textarea>
-              </div>
+              <textarea
+                class="form-control"
+                id="inputComplaint"
+                rows="4"
+                name="complaint"
+                v-model="complaint"
+              ></textarea>
             </div>
           </div>
           <div class="modal-footer">
@@ -64,45 +62,26 @@ export default {
   data() {
     return {
       isLogin: false,
-      name: "",
-      nik: "",
-      phone: "",
-      email: "",
-      password: "",
       complaint: "",
       error: null,
     };
   },
 
   methods: {
-    async register() {
+    async queue() {
       try {
-        await this.$axios.post("register", {
-          name: this.name,
-          email: this.email,
-          password: this.password,
-          phone: this.phone,
-          nik: this.nik,
+        await this.$axios.post("queue", {
+          user_id: this.$auth.user.id,
+          keluhan: this.complaint,
         });
-        await this.$auth.loginWith("local", {
-          data: {
-            email: this.email,
-            password: this.password,
-          },
-        });
-        this.$router.push("/profile");
+        this.$router.go();
       } catch (e) {
+        console.log(this.$auth.user.id, this.complaint);
         this.error = e.response.data.data.message;
       }
     },
     async login() {
       try {
-        // await this.$axios.$post("login", {
-        //   data: {
-        //     email: this.email,
-        //     password: this.password,
-        //   },
-        // });
         await this.$auth.loginWith("local", {
           data: {
             email: this.email,

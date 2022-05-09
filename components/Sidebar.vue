@@ -12,21 +12,25 @@
       <nuxt-link
         class="d-flex justify-content-center"
         to="/book"
-        v-if="!isAuthenticated"
+        v-if="isAuthenticated && loggedInUser.role == 'DOCTOR'"
       >
         <img src="~/assets/icon_bookmark.png" alt="" />
       </nuxt-link>
       <nuxt-link
         class="d-flex justify-content-center"
         to="/profile"
-        v-if="isAuthenticated"
+        v-if="isAuthenticated && loggedInUser.role == 'USER'"
       >
         <img src="~/assets/icon_profile.png" alt="" />
       </nuxt-link>
     </div>
     <div class="setting d-flex flex-column">
-      <img src="~/assets/icon_setting.svg" alt="" @click="$auth.logout()" />
-      <img src="~/assets/icon_about.svg" alt="" />
+      <img
+        v-if="isAuthenticated"
+        src="~/assets/logout.png"
+        alt=""
+        @click="$auth.logout()"
+      />
     </div>
   </div>
 </template>
@@ -47,5 +51,9 @@ a.nuxt-link-exact-active {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 1rem;
   border-radius: 1rem;
+}
+.setting img {
+  width: 3rem;
+  cursor: pointer;
 }
 </style>

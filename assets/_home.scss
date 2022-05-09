@@ -24,6 +24,7 @@
   .queue {
     margin-top: 4rem;
   }
+
   .queue-card {
     background: #5e85ff;
     color: #fff;
@@ -36,6 +37,9 @@
     h4 {
       color: #ededed;
     }
+  }
+  .closed {
+    background: #ef3636;
   }
   .cta {
     h1 {

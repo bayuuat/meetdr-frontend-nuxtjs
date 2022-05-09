@@ -57,6 +57,9 @@ export default {
         user: {
           property: 'data'
         },
+        token: {
+          maxAge: 86400
+        },
         endpoints: {
           login: { url: 'login', method: 'post' },
           user: { url: 'user', method: 'get', propertyName: 'data.data' },
